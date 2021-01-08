@@ -23,12 +23,14 @@ To get going, for ubuntu install depends...
 $ sudo apt update
 
 # install xerces (https://xerces.apache.org/index.html) and xsdcxx (https://linux.die.net/man/1/xsdcxx)
-$ sudo apt install Xerces-C++  xsdcxx  
+$ sudo apt install Xerces-C++ xsdcxx  
+
+$ git clone https://github.com/hippyau/gdtf-cxx.git 
+
+$ cd gdtf-cxx
 
 # you can get the gdtf.xsd from https://gitlab.com/petrvanek/gdtf-libraries
-# however, it's included as a submodule, so we can do a recursive clone
-
-$ git clone --recurse-submodules https://github.com/hippyau/gdtf-cxx.git 
+$ git clone https://gitlab.com/petrvanek/gdtf-libraries.git
 
 $ chmod +x *.sh
 
