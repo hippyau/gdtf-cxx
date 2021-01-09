@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<GDTF DataVersion="1.0">
+<GDTF DataVersion="1.0" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://schemas.gdtf-share.com/device gdtf-libraries/gdtf.xsd" 
+  xmlns:t="http://schemas.gdtf-share.com/device" 
+  xmlns="http://schemas.gdtf-share.com/device"
+ >
 
   <FixtureType Description="Classical 3 Series - GDTF in progress" FixtureTypeID="DCE7AA4F-2147-4B6A-9607-15A09D692A6F" LongName="Diablo" Manufacturer="Ayrton" Name="Diablo" RefFT="" ShortName="Diablo" Thumbnail="Diablo GDTF">
     <AttributeDefinitions>
