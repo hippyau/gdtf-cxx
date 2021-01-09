@@ -4150,7 +4150,7 @@ namespace device
     // pre ();
 
     virtual void
-    ColorSpace ();
+    Mode ();
 
     virtual void
     Red ();
@@ -4170,7 +4170,7 @@ namespace device
     // Parser construction API.
     //
     void
-    ColorSpace_parser (::device::ColorSpaceEnum_pskel&);
+    Mode_parser (::device::ColorSpaceEnum_pskel&);
 
     void
     Red_parser (::device::colorcietype_pskel&);
@@ -4185,7 +4185,7 @@ namespace device
     WhitePoint_parser (::device::colorcietype_pskel&);
 
     void
-    parsers (::device::ColorSpaceEnum_pskel& /* ColorSpace */,
+    parsers (::device::ColorSpaceEnum_pskel& /* Mode */,
              ::device::colorcietype_pskel& /* Red */,
              ::device::colorcietype_pskel& /* Green */,
              ::device::colorcietype_pskel& /* Blue */,
@@ -4204,7 +4204,7 @@ namespace device
                      const ::xml_schema::ro_string&);
 
     protected:
-    ::device::ColorSpaceEnum_pskel* ColorSpace_parser_;
+    ::device::ColorSpaceEnum_pskel* Mode_parser_;
     ::device::colorcietype_pskel* Red_parser_;
     ::device::colorcietype_pskel* Green_parser_;
     ::device::colorcietype_pskel* Blue_parser_;

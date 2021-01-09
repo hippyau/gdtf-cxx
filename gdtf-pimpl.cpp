@@ -2287,7 +2287,7 @@ namespace device
   }
 
   void ColorSpace_pimpl::
-  ColorSpace ()
+  Mode ()
   {
   }
 

@@ -6432,34 +6432,34 @@ namespace device
   // ColorSpace
   // 
 
-  const ColorSpace::ColorSpace1_optional& ColorSpace::
-  ColorSpace1 () const
+  const ColorSpace::Mode_optional& ColorSpace::
+  Mode () const
   {
-    return this->ColorSpace1_;
+    return this->Mode_;
   }
 
-  ColorSpace::ColorSpace1_optional& ColorSpace::
-  ColorSpace1 ()
+  ColorSpace::Mode_optional& ColorSpace::
+  Mode ()
   {
-    return this->ColorSpace1_;
-  }
-
-  void ColorSpace::
-  ColorSpace1 (const ColorSpace1_type& x)
-  {
-    this->ColorSpace1_.set (x);
+    return this->Mode_;
   }
 
   void ColorSpace::
-  ColorSpace1 (const ColorSpace1_optional& x)
+  Mode (const Mode_type& x)
   {
-    this->ColorSpace1_ = x;
+    this->Mode_.set (x);
   }
 
   void ColorSpace::
-  ColorSpace1 (::std::unique_ptr< ColorSpace1_type > x)
+  Mode (const Mode_optional& x)
   {
-    this->ColorSpace1_.set (std::move (x));
+    this->Mode_ = x;
+  }
+
+  void ColorSpace::
+  Mode (::std::unique_ptr< Mode_type > x)
+  {
+    this->Mode_.set (std::move (x));
   }
 
   const ColorSpace::Red_optional& ColorSpace::
@@ -8317,11 +8317,11 @@ namespace device
     ::xsd::cxx::tree::enum_comparator< char > c (_xsd_PrimitiveTypeEnum_literals_);
     const value* i (::std::lower_bound (
                       _xsd_PrimitiveTypeEnum_indexes_,
-                      _xsd_PrimitiveTypeEnum_indexes_ + 9,
+                      _xsd_PrimitiveTypeEnum_indexes_ + 10,
                       *this,
                       c));
 
-    if (i == _xsd_PrimitiveTypeEnum_indexes_ + 9 || _xsd_PrimitiveTypeEnum_literals_[*i] != *this)
+    if (i == _xsd_PrimitiveTypeEnum_indexes_ + 10 || _xsd_PrimitiveTypeEnum_literals_[*i] != *this)
     {
       throw ::xsd::cxx::tree::unexpected_enumerator < char > (*this);
     }
@@ -8330,7 +8330,7 @@ namespace device
   }
 
   const char* const PrimitiveTypeEnum::
-  _xsd_PrimitiveTypeEnum_literals_[9] =
+  _xsd_PrimitiveTypeEnum_literals_[10] =
   {
     "Undefined",
     "Cube",
@@ -8340,17 +8340,19 @@ namespace device
     "Yoke",
     "Head",
     "Scanner",
-    "Conventional"
+    "Conventional",
+    "Pigtail"
   };
 
   const PrimitiveTypeEnum::value PrimitiveTypeEnum::
-  _xsd_PrimitiveTypeEnum_indexes_[9] =
+  _xsd_PrimitiveTypeEnum_indexes_[10] =
   {
     ::device::PrimitiveTypeEnum::Base,
     ::device::PrimitiveTypeEnum::Conventional,
     ::device::PrimitiveTypeEnum::Cube,
     ::device::PrimitiveTypeEnum::Cylinder,
     ::device::PrimitiveTypeEnum::Head,
+    ::device::PrimitiveTypeEnum::Pigtail,
     ::device::PrimitiveTypeEnum::Scanner,
     ::device::PrimitiveTypeEnum::Sphere,
     ::device::PrimitiveTypeEnum::Undefined,
@@ -17405,7 +17407,7 @@ namespace device
   ColorSpace::
   ColorSpace ()
   : ::xml_schema::type (),
-    ColorSpace1_ (this),
+    Mode_ (this),
     Red_ (this),
     Green_ (this),
     Blue_ (this),
@@ -17418,7 +17420,7 @@ namespace device
               ::xml_schema::flags f,
               ::xml_schema::container* c)
   : ::xml_schema::type (x, f, c),
-    ColorSpace1_ (x.ColorSpace1_, f, this),
+    Mode_ (x.Mode_, f, this),
     Red_ (x.Red_, f, this),
     Green_ (x.Green_, f, this),
     Blue_ (x.Blue_, f, this),
@@ -17431,7 +17433,7 @@ namespace device
               ::xml_schema::flags f,
               ::xml_schema::container* c)
   : ::xml_schema::type (e, f | ::xml_schema::flags::base, c),
-    ColorSpace1_ (this),
+    Mode_ (this),
     Red_ (this),
     Green_ (this),
     Blue_ (this),
@@ -17454,9 +17456,9 @@ namespace device
       const ::xsd::cxx::xml::qualified_name< char > n (
         ::xsd::cxx::xml::dom::name< char > (i));
 
-      if (n.name () == "ColorSpace" && n.namespace_ ().empty ())
+      if (n.name () == "Mode" && n.namespace_ ().empty ())
       {
-        this->ColorSpace1_.set (ColorSpace1_traits::create (i, f, this));
+        this->Mode_.set (Mode_traits::create (i, f, this));
         continue;
       }
 
@@ -17499,7 +17501,7 @@ namespace device
     if (this != &x)
     {
       static_cast< ::xml_schema::type& > (*this) = x;
-      this->ColorSpace1_ = x.ColorSpace1_;
+      this->Mode_ = x.Mode_;
       this->Red_ = x.Red_;
       this->Green_ = x.Green_;
       this->Blue_ = x.Blue_;

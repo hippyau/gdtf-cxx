@@ -1476,7 +1476,7 @@ namespace device
     pre ();
 
     virtual void
-    ColorSpace ();
+    Mode ();
 
     virtual void
     Red ();

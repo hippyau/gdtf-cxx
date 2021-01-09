@@ -789,7 +789,8 @@ namespace device
       Yoke,
       Head,
       Scanner,
-      Conventional
+      Conventional,
+      Pigtail
     };
 
     PrimitiveTypeEnum (value v);
@@ -835,8 +836,8 @@ namespace device
     _xsd_PrimitiveTypeEnum_convert () const;
 
     public:
-    static const char* const _xsd_PrimitiveTypeEnum_literals_[9];
-    static const value _xsd_PrimitiveTypeEnum_indexes_[9];
+    static const char* const _xsd_PrimitiveTypeEnum_literals_[10];
+    static const value _xsd_PrimitiveTypeEnum_indexes_[10];
   };
 
   class LampTypeEnum: public ::xml_schema::string
@@ -8659,26 +8660,26 @@ namespace device
   class ColorSpace: public ::xml_schema::type
   {
     public:
-    // ColorSpace
+    // Mode
     //
-    typedef ::device::ColorSpaceEnum ColorSpace1_type;
-    typedef ::xsd::cxx::tree::optional< ColorSpace1_type > ColorSpace1_optional;
-    typedef ::xsd::cxx::tree::traits< ColorSpace1_type, char > ColorSpace1_traits;
+    typedef ::device::ColorSpaceEnum Mode_type;
+    typedef ::xsd::cxx::tree::optional< Mode_type > Mode_optional;
+    typedef ::xsd::cxx::tree::traits< Mode_type, char > Mode_traits;
 
-    const ColorSpace1_optional&
-    ColorSpace1 () const;
+    const Mode_optional&
+    Mode () const;
 
-    ColorSpace1_optional&
-    ColorSpace1 ();
-
-    void
-    ColorSpace1 (const ColorSpace1_type& x);
+    Mode_optional&
+    Mode ();
 
     void
-    ColorSpace1 (const ColorSpace1_optional& x);
+    Mode (const Mode_type& x);
 
     void
-    ColorSpace1 (::std::unique_ptr< ColorSpace1_type > p);
+    Mode (const Mode_optional& x);
+
+    void
+    Mode (::std::unique_ptr< Mode_type > p);
 
     // Red
     //
@@ -8794,7 +8795,7 @@ namespace device
            ::xml_schema::flags);
 
     protected:
-    ColorSpace1_optional ColorSpace1_;
+    Mode_optional Mode_;
     Red_optional Red_;
     Green_optional Green_;
     Blue_optional Blue_;

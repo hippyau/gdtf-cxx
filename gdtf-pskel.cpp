@@ -2620,9 +2620,9 @@ namespace device
   //
 
   void ColorSpace_pskel::
-  ColorSpace_parser (::device::ColorSpaceEnum_pskel& p)
+  Mode_parser (::device::ColorSpaceEnum_pskel& p)
   {
-    this->ColorSpace_parser_ = &p;
+    this->Mode_parser_ = &p;
   }
 
   void ColorSpace_pskel::
@@ -2650,13 +2650,13 @@ namespace device
   }
 
   void ColorSpace_pskel::
-  parsers (::device::ColorSpaceEnum_pskel& ColorSpace,
+  parsers (::device::ColorSpaceEnum_pskel& Mode,
            ::device::colorcietype_pskel& Red,
            ::device::colorcietype_pskel& Green,
            ::device::colorcietype_pskel& Blue,
            ::device::colorcietype_pskel& WhitePoint)
   {
-    this->ColorSpace_parser_ = &ColorSpace;
+    this->Mode_parser_ = &Mode;
     this->Red_parser_ = &Red;
     this->Green_parser_ = &Green;
     this->Blue_parser_ = &Blue;
@@ -2665,7 +2665,7 @@ namespace device
 
   ColorSpace_pskel::
   ColorSpace_pskel ()
-  : ColorSpace_parser_ (0),
+  : Mode_parser_ (0),
     Red_parser_ (0),
     Green_parser_ (0),
     Blue_parser_ (0),
@@ -10056,7 +10056,7 @@ namespace device
   //
 
   void ColorSpace_pskel::
-  ColorSpace ()
+  Mode ()
   {
   }
 
@@ -10093,16 +10093,16 @@ namespace device
     if (this->::xml_schema::complex_content::_attribute_impl (ns, n, v))
       return true;
 
-    if (n == "ColorSpace" && ns.empty ())
+    if (n == "Mode" && ns.empty ())
     {
-      if (this->ColorSpace_parser_)
+      if (this->Mode_parser_)
       {
-        this->ColorSpace_parser_->pre ();
-        this->ColorSpace_parser_->_pre_impl ();
-        this->ColorSpace_parser_->_characters (v);
-        this->ColorSpace_parser_->_post_impl ();
-        this->ColorSpace_parser_->post_ColorSpaceEnum ();
-        this->ColorSpace ();
+        this->Mode_parser_->pre ();
+        this->Mode_parser_->_pre_impl ();
+        this->Mode_parser_->_characters (v);
+        this->Mode_parser_->_post_impl ();
+        this->Mode_parser_->post_ColorSpaceEnum ();
+        this->Mode ();
       }
 
       return true;
